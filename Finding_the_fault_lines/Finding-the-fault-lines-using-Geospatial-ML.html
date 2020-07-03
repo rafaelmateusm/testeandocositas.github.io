@@ -75,11 +75,11 @@
 	</div>
 </div></script>
 <script type="text/x-handlebars-template" id="page_master">{{#if this.is_set}} {{#each pages}} {{#if this.is_set}} <div data-container="set" data-id="{{id}}"> {{>page_master}} </div> {{else}} {{>page}} {{/if}} {{/each}} {{else}} {{>page}} {{/if}}</script>
-<script type="text/x-handlebars-template" id="page">{{#if pin}} {{!-- Do not render pins in this view --}} {{else}} <div data-container="page" class="page_container" {{#if page_options.local_layout_options.split_responsive}}split-responsive {{else}}{{#if page_options.local_layout_options.split_layout}}split-layout {{/if}}{{/if}}local-style="{{id}}" data-id="{{id}}"> <div class="page container container_width" data-container="content" data-id="{{id}}"> <bodycopy class="bodycopy content content_padding"> <div class="page_content clearfix" data-elementresizer data-resize-parent> {{print "content"}} </div> {{{ page_options.svg_overlay }}} </bodycopy> </div> <div class="page_background"></div> <style class="local-css" data-target="{{id}}"> {{{ page_options.local_css }}} </style> {{#if_all backdrop backdrop_enabled}} <div data-backdrop="{{backdrop.backdrop_path}}" class="backdrop" data-view="Backdrop" data-id="{{id}}"> [script type="text/json" data-set="backdrop_data">{{{stringify backdrop}}}[/script> </div> {{/if_all}} </div> {{/if}}</script>
+<script type="text/x-handlebars-template" id="page">{{#if pin}} {{!-- Do not render pins in this view --}} {{else}} <div data-container="page" class="page_container" {{#if page_options.local_layout_options.split_responsive}}split-responsive {{else}}{{#if page_options.local_layout_options.split_layout}}split-layout {{/if}}{{/if}}local-style="{{id}}" data-id="{{id}}"> <div class="page container container_width" data-container="content" data-id="{{id}}"> <bodycopy class="bodycopy content content_padding"> <div class="page_content clearfix" data-elementresizer data-resize-parent> {{print "content"}} </div> {{{ page_options.svg_overlay }}} </bodycopy> </div> <style class="local-css" data-target="{{id}}"> {{{ page_options.local_css }}} </style> {{#if_all backdrop backdrop_enabled}} <div data-backdrop="{{backdrop.backdrop_path}}" class="backdrop" data-view="Backdrop" data-id="{{id}}"> [script type="text/json" data-set="backdrop_data">{{{stringify backdrop}}}[/script> </div> {{/if_all}} </div> {{/if}}</script>
 <script type="text/x-handlebars-template" id="content">{{#each content}} {{#if pin}}{{!-- Do not render pins in this view --}} {{else}} {{#if this.is_set}} <div data-container="{{#if this.is_set}}set{{else}}page{{/if}}" data-id="{{id}}"> {{>page_master}} </div> {{else}} {{>page_master}} {{/if}} {{/if}} {{/each}}</script>
 <script type="text/x-handlebars-template" id="sitemenu"><div id="site_menu_panel"> <div id="site_menu" class="site_menu"> <div class="page-link home-link {{#if display_options.site_menu_options.show_homepage}} {{else}}hidden{{/if}}"> <a href="" rel="home_page">Homepage</a> <div class="break"></div> </div> {{#each site_menu_tree.pages}} {{>sitemenu_item}} {{/each}} <div class="close">×</div> </div> </div></script>
 <script type="text/x-handlebars-template" id="sitemenu_item">{{#if is_set}} {{#if in_nav}} <div class="set-link" data-link-pid="{{id}}" data-prevtype="{{previous_type}}"> {{#if_equal set_id 0}} {{#if has_children}} {{#if_equal previous_type "page"}} <div class="break"></div> {{/if_equal}} {{/if}} {{/if_equal}} {{#if in_nav}} <a href="{{project_url}}" rel="history">{{title}}</a> {{/if}} <div data-set-wrapper {{#if in_nav}}class="indent"{{/if}}> {{/if}} {{#each pages}} {{>sitemenu_item}} {{/each}} {{#if in_nav}} </div> </div> {{/if}} {{else}} {{#if in_nav}} <div class="page-link" data-link-pid="{{id}}" data-prevtype="{{previous_type}}"> <a href="{{project_url}}" rel="history">{{title}}</a> </div> {{/if}} {{/if}}</script>
-<script type="text/x-handlebars-template" id="pin"><div class="page_container{{#if pin_options.overlay}} overlay{{/if}}{{#if pin_options.accommodate}} accommodate{{/if}}{{#if pin_options.fixed}} fixed{{/if}}{{#if pin_options.exclude_mobile}} exclude_mobile{{/if}}{{#if pin_options.exclude_desktop}} exclude_desktop{{/if}}{{#if_equal pin_options.position 'bottom'}}{{#unless pin_options.fixed}} bottom_pin_invisibility{{/unless}}{{/if_equal}}" local-style="{{id}}"> <div class="page container container_width clearfix" data-container="content" data-id="{{id}}"> <bodycopy class="bodycopy content content_padding"> {{#if_option "title_in_project"}} {{#if show_title}} <div class="project_title" style="display: none"> {{{title}}} </div> {{/if}} {{/if_option}} <div class="page_content clearfix" data-elementresizer data-resize-parent> {{print "content"}} </div> {{{ page_options.svg_overlay }}} </bodycopy> </div> <div class="page_background"></div> <style class="local-css" data-target="{{id}}"> {{{ page_options.local_css }}} </style> {{#if_all backdrop backdrop_enabled}} <div data-backdrop="{{backdrop.backdrop_path}}" class="backdrop" data-view="Backdrop" data-id="{{backdrop.page_id}}">[script type="text/json" data-set="backdrop_data">{{{stringify backdrop}}}[/script></div> {{/if_all}} </div></script>
+<script type="text/x-handlebars-template" id="pin"><div class="page_container{{#if pin_options.overlay}} overlay{{/if}}{{#if pin_options.accommodate}} accommodate{{/if}}{{#if pin_options.fixed}} fixed{{/if}}{{#if pin_options.exclude_mobile}} exclude_mobile{{/if}}{{#if pin_options.exclude_desktop}} exclude_desktop{{/if}}{{#if_equal pin_options.position 'bottom'}}{{#unless pin_options.fixed}} bottom_pin_invisibility{{/unless}}{{/if_equal}}" local-style="{{id}}"> <div class="page container container_width clearfix" data-container="content" data-id="{{id}}"> <bodycopy class="bodycopy content content_padding"> {{#if_option "title_in_project"}} {{#if show_title}} <div class="project_title" style="display: none"> {{{title}}} </div> {{/if}} {{/if_option}} <div class="page_content clearfix" data-elementresizer data-resize-parent> {{print "content"}} </div> {{{ page_options.svg_overlay }}} </bodycopy> </div> <style class="local-css" data-target="{{id}}"> {{{ page_options.local_css }}} </style> {{#if_all backdrop backdrop_enabled}} <div data-backdrop="{{backdrop.backdrop_path}}" class="backdrop" data-view="Backdrop" data-id="{{backdrop.page_id}}">[script type="text/json" data-set="backdrop_data">{{{stringify backdrop}}}[/script></div> {{/if_all}} </div></script>
 <script type="text/x-handlebars-template" id="pinned_top">{{#each pinned}} {{#if pin}} {{#if_equal pin_options.position 'top'}} {{>pin}} {{/if_equal}} {{/if}} {{/each}}</script>
 <script type="text/x-handlebars-template" id="pinned_bottom">{{#each pinned}} {{#if pin}} {{#if_equal pin_options.position 'bottom'}} {{>pin}} {{/if_equal}} {{/if}} {{/each}}</script>
 <script type="text/x-handlebars-template" id="thumbnail"><div class="container thumbnails_width clearfix"> <div class="content content_padding"> <div class="thumbnails"> {{>thumbnail_subview}} </div> </div> </div></script>
@@ -135,16 +135,14 @@
 </div>
 		<a id="shop_button" rel="show_cart" href class="disabled  ">
 			</a>
-		<div class="main_container">
-
-			<div data-view="pinned_top" data-set="Scaffolding" data-position="top" class="pinned pinned_top">
-				<div class="page_container overlay accommodate fixed" local-style="1731500">
+      <div data-view="pinned_top" data-set="Scaffolding" data-position="top" class="pinned pinned_top" style="height: 235.734px;">
+				<div class="page_container overlay accommodate fixed pointer-events-none" local-style="1731500" style="top: 0px; z-index: 7;">
 	<div class="page container container_width clearfix" data-container="content" data-id="1731500">
 		<bodycopy class="bodycopy content content_padding">
 
 
-			<div class="page_content clearfix" data-elementresizer data-resize-parent>
-				<projectcontent><div grid-row="" grid-pad="0" grid-gutter="0" grid-responsive="" class=""><div grid-col="x12" grid-pad="0" class=""><h1><a href="https://brian-ho.io/#Top">CHRISTINA LAST</a></h1></div></div></projectcontent>
+			<div class="page_content clearfix" data-elementresizer="" data-resize-parent="" data-ce-host="true" data-ce-model-id="1731500">
+				<div grid-row="" grid-pad="0" grid-gutter="0" grid-responsive="" class=""><div grid-col="x12" grid-pad="0" class=""><h1><a href="https://brian-ho.io/#Top">CHRISTINA LAST</a></h1></div></div>
 			</div>
 
 
@@ -216,7 +214,7 @@
 [data-predefined-style="true"] [local-style="1731500"] a a {
 }
 	</style>
-	</div>			<div class="page_container overlay accommodate fixed exclude_mobile" local-style="1731501">
+	</div>			<div class="page_container overlay accommodate fixed exclude_mobile pointer-events-none" local-style="1731501" style="top: 0px; z-index: 6;">
 	<div class="page container container_width clearfix" data-container="content" data-id="1731501">
 		<bodycopy class="bodycopy content content_padding">
 
@@ -289,14 +287,14 @@
 [data-predefined-style="true"] [local-style="1731501"] a a {
 }
 	</style>
-	</div>				<div class="page_container accommodate" local-style="2233281">
+	</div>				<div class="page_container accommodate" local-style="2233281" style="padding-top: 78.125px; top: 0px;" data-padding-top="true">
 	<div class="page container container_width clearfix" data-container="content" data-id="2233281">
 		<bodycopy class="bodycopy content content_padding">
 
 
-			<div class="page_content clearfix" data-elementresizer data-resize-parent>
-				<projectcontent><small>FEATURED PROJECTS</small><br>
-<h2><div style="max-width: 1200px; text-align: left;">I'm an interdisciplinary data scientist working at the intersection of quantitative social science, technology and the built environment.</div></h2></projectcontent>
+			<div class="page_content clearfix" data-elementresizer="" data-resize-parent="" data-ce-host="true" data-ce-model-id="2233281">
+				<small>FEATURED PROJECTS</small><br>
+<h2><div style="max-width: 1200px; text-align: left;">I'm an interdisciplinary data scientist working at the intersection of quantitative social science, technology and the built environment.</div></h2>
 			</div>
 
 
@@ -372,8 +370,19 @@
 }
 	</style>
 
+<div data-backdrop="pixelation" class="backdrop" data-view="Backdrop" data-id="2233281"><div style="opacity: 1; transition: opacity 0.5s ease-in-out 0s; will-change: initial;"><div class="loading_animation pulsing <%= extra_class %> hidden">
+	<div>
+		<svg class="loading" width="500" height="500" viewBox="0 0 500 500">
+		      <path d="M495,201.19a257.61,257.61,0,0,0-14.19-47.05,260.51,260.51,0,0,0-23.17-42.9,253.09,253.09,0,0,0-69.06-68.85,245.21,245.21,0,0,0-42.88-23A227.1,227.1,0,0,0,298.88,5.26,241.81,241.81,0,0,0,249.5.31V0C111.7,0,0,111.7,0,249.5H.32a242.23,242.23,0,0,0,4.93,49.36A227.43,227.43,0,0,0,19.82,345a247.09,247.09,0,0,0,23,43,253.65,253.65,0,0,0,68.87,68.85,260.28,260.28,0,0,0,43,23.19,258.59,258.59,0,0,0,47,14.17,254.37,254.37,0,0,0,47.86,4.69V499c7.64,0,15.16-.47,22.62-1.14.88-.08,1.77-.05,2.66-.14,1.3-.13,2.56-.41,3.86-.56,6.82-.77,13.63-1.66,20.42-3A255.67,255.67,0,0,0,345.86,480a246.52,246.52,0,0,0,42.95-23.19A253.15,253.15,0,0,0,457.64,388a246.55,246.55,0,0,0,23.21-43A256.9,256.9,0,0,0,495,298.19a250.34,250.34,0,0,0,4.71-48.69A246.63,246.63,0,0,0,495,201.19ZM484.14,249.5H249.5V483.27a238.72,238.72,0,0,1-44.83-4.37,245.21,245.21,0,0,1-44-13.26,246.55,246.55,0,0,1-40.28-21.75,237.64,237.64,0,0,1-64.61-64.62,231.25,231.25,0,0,1-21.6-40.37,212.18,212.18,0,0,1-13.63-43.15,226.46,226.46,0,0,1-4.61-46.25H249.5V15.92c.2,0,.39,0,.59,0a227.57,227.57,0,0,1,45.79,4.67,212.11,212.11,0,0,1,43.79,13.26,228.85,228.85,0,0,1,40.22,21.52,237.92,237.92,0,0,1,64.82,64.6,246.65,246.65,0,0,1,21.72,40.2,243.26,243.26,0,0,1,13.28,44.09,231,231,0,0,1,4.43,45.26Z"></path>
+		</svg>
+	</div>
+</div><canvas width="2026" height="472" class="canvas_pixelation"></canvas></div></div>
+</div>
+</div>
 	<div data-backdrop="pixelation" class="backdrop" data-view="Backdrop" data-id="2233281"><script type="text/json" data-set="backdrop_data">{"id":324005,"site_id":105789,"page_id":"2233281","backdrop_id":15,"backdrop_path":"pixelation","is_active":true,"data":{"layout_mode":"grid_mode","rows":64,"columns":64,"grid_size":25,"zoom":100,"flip_it":false,"stir_grid":true,"stir_freq":15,"stir_strength":22,"stir_disorder":46,"elasticity":33,"color":"rgba(0, 0, 0, 0)","hex":"#000000","alpha":"0","mouse_interaction":false,"mouse_sensitivity":6,"tolerance":66,"mouse_zoom":100,"image":"11015708","requires_webgl":"true","image_width":"1500","image_height":"1500"}}</script></div>
-</div>						</div>
+</div>
+</div>
+<div class="main_container">
 
 			<div class="content_container">
 <div data-view="Content" data-set="Scaffolding">
@@ -465,7 +474,6 @@ equity and accessibility for Hispanics and African Americans in Los Angeles Coun
         </div>
         </bodycopy>
         </div>
-        <div class="page_background"></div>
         <style class="local-css" data-target="1733654">
         [local-style="1733654"] .container_width {
 
@@ -613,6 +621,15 @@ equity and accessibility for Hispanics and African Americans in Los Angeles Coun
     					</a>
     					<div class="tags"><a href="../Sustainable-energy-infrastructure-for-climate-justice" rel="history">Big Data Visualisation of Travel books in Seattle Public Library.</a></div>
     				</div>
+            <bodycopy class="bodycopy content content_padding">
+
+
+              <div class="page_content clearfix" data-elementresizer data-resize-parent>
+                <projectcontent><hr><div style="text-align: left"><h2><a href="#Top" class="icon-link" style="text-decoration:none">︎</a>&nbsp; &nbsp; Get in touch: <a href="mailto:christina.last@outlook.com">email</a>, <a href="https://github.com/ChristinaLast/" target="_blank">Github</a>, <a href="https://www.linkedin.com/in/christina-last/" target="_blank">LinkedIn</a>.</h2></div></projectcontent>
+              </div>
+
+
+            </bodycopy>
 	<style class="local-css" data-target="1731502">
 		[local-style="1731502"] .container_width {
 	width: 90% /*!variable_defaults*/;
@@ -817,11 +834,11 @@ equity and accessibility for Hispanics and African Americans in Los Angeles Coun
 	</div>
 </div></script>
 <script type="text/x-handlebars-template" id="page_master">{{#if this.is_set}} {{#each pages}} {{#if this.is_set}} <div data-container="set" data-id="{{id}}"> {{>page_master}} </div> {{else}} {{>page}} {{/if}} {{/each}} {{else}} {{>page}} {{/if}}</script>
-<script type="text/x-handlebars-template" id="page">{{#if pin}} {{!-- Do not render pins in this view --}} {{else}} <div data-container="page" class="page_container" {{#if page_options.local_layout_options.split_responsive}}split-responsive {{else}}{{#if page_options.local_layout_options.split_layout}}split-layout {{/if}}{{/if}}local-style="{{id}}" data-id="{{id}}"> <div class="page container container_width" data-container="content" data-id="{{id}}"> <bodycopy class="bodycopy content content_padding"> <div class="page_content clearfix" data-elementresizer data-resize-parent> {{print "content"}} </div> {{{ page_options.svg_overlay }}} </bodycopy> </div> <div class="page_background"></div> <style class="local-css" data-target="{{id}}"> {{{ page_options.local_css }}} </style> {{#if_all backdrop backdrop_enabled}} <div data-backdrop="{{backdrop.backdrop_path}}" class="backdrop" data-view="Backdrop" data-id="{{id}}"> [script type="text/json" data-set="backdrop_data">{{{stringify backdrop}}}[/script> </div> {{/if_all}} </div> {{/if}}</script>
+<script type="text/x-handlebars-template" id="page">{{#if pin}} {{!-- Do not render pins in this view --}} {{else}} <div data-container="page" class="page_container" {{#if page_options.local_layout_options.split_responsive}}split-responsive {{else}}{{#if page_options.local_layout_options.split_layout}}split-layout {{/if}}{{/if}}local-style="{{id}}" data-id="{{id}}"> <div class="page container container_width" data-container="content" data-id="{{id}}"> <bodycopy class="bodycopy content content_padding"> <div class="page_content clearfix" data-elementresizer data-resize-parent> {{print "content"}} </div> {{{ page_options.svg_overlay }}} </bodycopy> </div> <style class="local-css" data-target="{{id}}"> {{{ page_options.local_css }}} </style> {{#if_all backdrop backdrop_enabled}} <div data-backdrop="{{backdrop.backdrop_path}}" class="backdrop" data-view="Backdrop" data-id="{{id}}"> [script type="text/json" data-set="backdrop_data">{{{stringify backdrop}}}[/script> </div> {{/if_all}} </div> {{/if}}</script>
 <script type="text/x-handlebars-template" id="content">{{#each content}} {{#if pin}}{{!-- Do not render pins in this view --}} {{else}} {{#if this.is_set}} <div data-container="{{#if this.is_set}}set{{else}}page{{/if}}" data-id="{{id}}"> {{>page_master}} </div> {{else}} {{>page_master}} {{/if}} {{/if}} {{/each}}</script>
 <script type="text/x-handlebars-template" id="sitemenu"><div id="site_menu_panel"> <div id="site_menu" class="site_menu"> <div class="page-link home-link {{#if display_options.site_menu_options.show_homepage}} {{else}}hidden{{/if}}"> <a href="" rel="home_page">Homepage</a> <div class="break"></div> </div> {{#each site_menu_tree.pages}} {{>sitemenu_item}} {{/each}} <div class="close">×</div> </div> </div></script>
 <script type="text/x-handlebars-template" id="sitemenu_item">{{#if is_set}} {{#if in_nav}} <div class="set-link" data-link-pid="{{id}}" data-prevtype="{{previous_type}}"> {{#if_equal set_id 0}} {{#if has_children}} {{#if_equal previous_type "page"}} <div class="break"></div> {{/if_equal}} {{/if}} {{/if_equal}} {{#if in_nav}} <a href="{{project_url}}" rel="history">{{title}}</a> {{/if}} <div data-set-wrapper {{#if in_nav}}class="indent"{{/if}}> {{/if}} {{#each pages}} {{>sitemenu_item}} {{/each}} {{#if in_nav}} </div> </div> {{/if}} {{else}} {{#if in_nav}} <div class="page-link" data-link-pid="{{id}}" data-prevtype="{{previous_type}}"> <a href="{{project_url}}" rel="history">{{title}}</a> </div> {{/if}} {{/if}}</script>
-<script type="text/x-handlebars-template" id="pin"><div class="page_container{{#if pin_options.overlay}} overlay{{/if}}{{#if pin_options.accommodate}} accommodate{{/if}}{{#if pin_options.fixed}} fixed{{/if}}{{#if pin_options.exclude_mobile}} exclude_mobile{{/if}}{{#if pin_options.exclude_desktop}} exclude_desktop{{/if}}{{#if_equal pin_options.position 'bottom'}}{{#unless pin_options.fixed}} bottom_pin_invisibility{{/unless}}{{/if_equal}}" {{#if page_options.local_layout_options.split_responsive}}split-responsive {{else}}{{#if page_options.local_layout_options.split_layout}}split-layout {{/if}}{{/if}}local-style="{{id}}"> <div class="page container container_width clearfix" data-container="content" data-id="{{id}}"> <bodycopy class="bodycopy content content_padding"> {{#if_option "title_in_project"}} {{#if show_title}} <div class="project_title" style="display: none"> {{{title}}} </div> {{/if}} {{/if_option}} <div class="page_content clearfix" data-elementresizer data-resize-parent> {{print "content"}} </div> {{{ page_options.svg_overlay }}} </bodycopy> </div> <div class="page_background"></div> <style class="local-css" data-target="{{id}}"> {{{ page_options.local_css }}} </style> {{#if_all backdrop backdrop_enabled}} <div data-backdrop="{{backdrop.backdrop_path}}" class="backdrop" data-view="Backdrop" data-id="{{backdrop.page_id}}">[script type="text/json" data-set="backdrop_data">{{{stringify backdrop}}}[/script></div> {{/if_all}} </div></script>
+<script type="text/x-handlebars-template" id="pin"><div class="page_container{{#if pin_options.overlay}} overlay{{/if}}{{#if pin_options.accommodate}} accommodate{{/if}}{{#if pin_options.fixed}} fixed{{/if}}{{#if pin_options.exclude_mobile}} exclude_mobile{{/if}}{{#if pin_options.exclude_desktop}} exclude_desktop{{/if}}{{#if_equal pin_options.position 'bottom'}}{{#unless pin_options.fixed}} bottom_pin_invisibility{{/unless}}{{/if_equal}}" {{#if page_options.local_layout_options.split_responsive}}split-responsive {{else}}{{#if page_options.local_layout_options.split_layout}}split-layout {{/if}}{{/if}}local-style="{{id}}"> <div class="page container container_width clearfix" data-container="content" data-id="{{id}}"> <bodycopy class="bodycopy content content_padding"> {{#if_option "title_in_project"}} {{#if show_title}} <div class="project_title" style="display: none"> {{{title}}} </div> {{/if}} {{/if_option}} <div class="page_content clearfix" data-elementresizer data-resize-parent> {{print "content"}} </div> {{{ page_options.svg_overlay }}} </bodycopy> </div><style class="local-css" data-target="{{id}}"> {{{ page_options.local_css }}} </style> {{#if_all backdrop backdrop_enabled}} <div data-backdrop="{{backdrop.backdrop_path}}" class="backdrop" data-view="Backdrop" data-id="{{backdrop.page_id}}">[script type="text/json" data-set="backdrop_data">{{{stringify backdrop}}}[/script></div> {{/if_all}} </div></script>
 <script type="text/x-handlebars-template" id="pinned_top">{{#each pinned}} {{#if pin}} {{#if_equal pin_options.position 'top'}} {{>pin}} {{/if_equal}} {{/if}} {{/each}}</script>
 <script type="text/x-handlebars-template" id="pinned_bottom">{{#each pinned}} {{#if pin}} {{#if_equal pin_options.position 'bottom'}} {{>pin}} {{/if_equal}} {{/if}} {{/each}}</script>
 <script type="text/x-handlebars-template" id="thumbnail"><div class="container thumbnails_width clearfix"> <div class="content content_padding"> <div class="thumbnails"> {{>thumbnail_subview}} </div> </div> </div></script>
@@ -889,87 +906,7 @@ equity and accessibility for Hispanics and African Americans in Los Angeles Coun
 </div>
 		<a id="shop_button" rel="show_cart" href="" class="disabled  " style="">
 			</a>
-		<div class="main_container">
-
-			<div data-view="pinned_top" data-set="Scaffolding" data-position="top" class="pinned pinned_top" style="height: 250.813px;">
-																<div class="page_container overlay accommodate fixed pointer-events-none" local-style="1731500" style="top: 0px; z-index: 7;">
-	<div class="page container container_width clearfix" data-container="content" data-id="1731500">
-		<bodycopy class="bodycopy content content_padding">
-
-
-			<div class="page_content clearfix" data-elementresizer="" data-resize-parent="" data-ce-host="true" data-ce-model-id="1731500">
-			</div>
-
-
-		</bodycopy>
-	</div>
-	<div class="page_background"></div>
-	<style class="local-css" data-target="1731500">
-		[local-style="1731500"] .container_width {
-	width: 100%/*!variable_defaults*/;
-}
-
-[local-style="1731500"] body {
-}
-
-[local-style="1731500"] .backdrop {
-}
-
-[local-style="1731500"] .page {
-}
-
-[local-style="1731500"] .page_background {
-	background-color: transparent /*!page_container_bgcolor*/;
-}
-
-[local-style="1731500"] .content_padding {
-	padding-bottom: 0rem /*!main_margin*/;
-}
-
-[data-predefined-style="true"] [local-style="1731500"] bodycopy {
-}
-
-[data-predefined-style="true"] [local-style="1731500"] bodycopy a {
-}
-
-[data-predefined-style="true"] [local-style="1731500"] h1 {
-	color: rgba(255, 255, 255, 0.8);
-    font-family: "Roboto Condensed", sans-serif;
-    font-weight: 300;
-}
-
-[data-predefined-style="true"] [local-style="1731500"] h1 a {
-	color: rgba(195, 195, 195, 0.75);
-}
-
-[data-predefined-style="true"] [local-style="1731500"] h2 {
-}
-
-[data-predefined-style="true"] [local-style="1731500"] h2 a {
-}
-
-[data-predefined-style="true"] [local-style="1731500"] small {
-}
-
-[data-predefined-style="true"] [local-style="1731500"] small a {
-}
-
-[local-style="1731500"] .container {
-}
-
-[data-predefined-style="true"] [local-style="1731500"] a:hover {
-}
-
-[data-predefined-style="true"] [local-style="1731500"] a:hover a {
-}
-
-[data-predefined-style="true"] [local-style="1731500"] a {
-}
-
-[data-predefined-style="true"] [local-style="1731500"] a a {
-}
-	</style>
-	</div><div class="page_container overlay accommodate fixed exclude_mobile pointer-events-none" local-style="1731501" style="top: 0px; z-index: 6;"> <div class="page container container_width clearfix" data-container="content" data-id="1731501"> <bodycopy class="bodycopy content content_padding">    <div class="page_content clearfix" data-elementresizer="" data-resize-parent="" data-ce-host="true" data-ce-model-id="1731501"> <div style="text-align: right"><h2></h2></div><br> </div>  </bodycopy> </div> <div class="page_background"></div> <style class="local-css" data-target="1731501"> [local-style="1731501"] .container_width {
+       <style class="local-css" data-target="1731501"> [local-style="1731501"] .container_width {
 	width: 98% /*!variable_defaults*/;
 }
 
@@ -1031,76 +968,7 @@ equity and accessibility for Hispanics and African Americans in Los Angeles Coun
 }
 
 [data-predefined-style="true"] [local-style="1731501"] a a {
-} </style>  </div><div class="page_container accommodate" local-style="2233281" style="padding-top: 111.438px; top: 0px;" data-padding-top="true">
-		<style id="">/*
- * This CSS file has been generated and is served by Cargo Collective Inc
- * and is authorized to be used on Cargo Collective Inc only.
- *
- * This CSS resource incorporates links to font software which is
- * the valuable copyrighted property of WebType LLC, The Font Bureau
- * and/or their suppliers. You may not
- * attempt to copy, install, redistribute, convert, modify or reverse
- * engineer this font software. Please contact WebType with any
- * questions: http://www.webtype.com
- */
-
-@font-face {
-  font-family: "DINosaur";
-  src: url("https://type.cargo.site/DINosaur/DINosaurBook-3.woff") format("woff");
-  font-style: normal;
-  font-weight: normal;
-  unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
-@font-face {
-  font-family: "DINosaur";
-  src: url("https://type.cargo.site/DINosaur/DINosaurBookItalic-3.woff") format("woff");
-  font-style: italic;
-  font-weight: normal;
-  unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
-@font-face {
-  font-family: "DINosaur";
-  src: url("https://type.cargo.site/DINosaur/DINosaurBold-3.woff") format("woff");
-  font-style: normal;
-  font-weight: bold;
-  unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
-@font-face {
-  font-family: "DINosaur";
-  src: url("https://type.cargo.site/DINosaur/DINosaurBoldItalic-3.woff") format("woff");
-  font-style: italic;
-  font-weight: bold;
-  unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
-@font-face {
-  font-family: "Quiosco";
-  src: url("https://type.cargo.site/Quiosco/QuioscoRegular-3.woff") format("woff");
-  font-style: normal;
-  font-weight: normal;
-  unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
-@font-face {
-  font-family: "Quiosco";
-  src: url("https://type.cargo.site/Quiosco/QuioscoItalic-3.woff") format("woff");
-  font-style: italic;
-  font-weight: normal;
-  unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
-@font-face {
-  font-family: "Quiosco";
-  src: url("https://type.cargo.site/Quiosco/QuioscoBold-3.woff") format("woff");
-  font-style: normal;
-  font-weight: bold;
-  unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
-@font-face {
-  font-family: "Quiosco";
-  src: url("https://type.cargo.site/Quiosco/QuioscoBoldItalic-3.woff") format("woff");
-  font-style: italic;
-  font-weight: bold;
-  unicode-range: U+0000-DFFF, U+F900-FFFD;
-}
-</style>
+} </style>
 
 
 <div id="following-overlay" style="display: none; position: fixed; top: 0px; left: 0px; right: 0px; bottom: 0px; z-index: 2147483637;"></div></body><div id="following-container" style="background: rgb(26, 26, 26);"><iframe id="following-frame" name="following-frame" style="display: none; border: none; background: transparent;" src="/followingframe/brianho2?20-07-01.1"></iframe></div></html>
