@@ -406,7 +406,7 @@
 <span style="color: rgba(100, 100, 100, 0.85098);"><i>"Booth House is Typing…” is a visualisation that visually spatializes conversations from a group chat for a guardianship community in East London.</i></span></div></div><br>
 </div></div><div grid-col="5" grid-pad="2" class=""><div class="in-text">
 <div class="in-text"><div class="in-text"><small><font color="#000000" face="Roboto Condensed, Icons">DETAILS</font></small><br>
-<span style="color: rgba(100, 100, 100, 0.85098);"><i>Awarded the <a href="https://www.boothhaus.com/">Booth Haus art exhibition</a> in Dexcember 2019.</i></span><br>
+<span style="color: rgba(100, 100, 100, 0.85098);"><i>Exhibited at the <a href="https://www.boothhaus.com/">Booth Haus art exhibition</a> in December 2019.</i></span><br>
 <div class="in-text"><div class="in-text"><div class="in-text"><div class="in-text"><div class="in-text"><span style="color: rgba(100, 100, 100, 0.85098);"></span></div></div></div></div></div></div></div></div></div></div><div grid-col="1" grid-pad="2"></div></div></div><h2><a id="Project"></a><div grid-row="" grid-pad="3" grid-gutter="6" grid-responsive=""><div grid-col="1" grid-pad="3"></div><div grid-col="5" grid-pad="3" class=""><a href="#Project" class="icon-link">︎</a></div><div grid-col="5" grid-pad="3"></div><div grid-col="1" grid-pad="3"></div></div><br>
 </h2><br>
 <br>
@@ -430,31 +430,38 @@
 	<div grid-col="0" grid-pad="2"></div>
 	<div grid-col="8" grid-pad="2" class=""><br>
 	<div grid-col="2" grid-pad="2"></div>
-</div><br>
+</div>
 <video width="1080" autoplay="" muted="" loop="" playsinline="" style="text-align: center;"><source src="Video_1.mp4" type="video/mp4">
 </video></div>
-<div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2></h2>The aim of the project was to measure the level of influence the geography has on unequal access to jobs in LA. Furthermore, the research questions whether transportation accessibility racially biased? To understand the link between the geography of LA's transportation network, and the socio-economic outcomes of for ethnic communities, I place the machine in the centre of this research question. 'Finding the Fault Lines' is the first comparison of traditional techniques for exploring multiple-scale geographic data (multilevel modelling) to geospatial machine learning techniques to classify accessibility.</div><div grid-col="5" grid-pad="2"></div><div grid-col="1" grid-pad="2"></div></div><br>
-<br>
-<br>
-<br>
-<div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2>Process 1: Methodology</h2>How can geospatial machine learning techniques help our understanding of the racial differences in job accessibility in Los Angeles Country?<br>
-<br>After mapping the historical underpinnings of the concept of accessibility, I ranked literature on its relevance, based on its applicability, representativeness, and methodological similarity. The methodology devised for the reearch compared a structured approach to modelling multi-scale geography (multi-level modelling) to an unsupervised machine learning technique (artificial neural network). </div><div grid-col="5" grid-pad="2"></div><div grid-col="1" grid-pad="2"></div></div><br>
-<br>
-<video width="1080" autoplay="" muted="" loop="" playsinline="" style="text-align: center;"><source src="Animation_2.mp4" type="video/mp4">
-  </video></div>
-  <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2>Process 2: Modelling</h2>How do we measure accessibility?<br>
-  <br>Travel time isochrones spatially identify the locations an individual can reach by transit at certain travel times. Totalling the amount of job availability in the isochrones allows us to understand how many jobs are accessible from any given location in Los Angeles County</div><div grid-col="5" grid-pad="2"></div><div grid-col="1" grid-pad="2"></div></div><br>
-
-  <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2>Process 3: Prediction</h2>How can new machine learning methods extend the knowledge of transportation accessibility and its effect on ethnic minorities?<br>
-<br>By comparing the results of a multilevel model which accounts for the different geographical levels accessibility and ethnicity are recorded at, with a supervised machine learning technique, I cross compare the results to evaluate the relative success of each model in predicting accessibility.</div>
-<br><div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive="">
+<div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2>Process 1: Data Cleaning</h2>
+  <br>The data driven visualisation uses the guardianship-wide whatsapp group chat, pre-processes the conversation to remove mobile numbers and contact information.
+  I ran the cleaned whatsapp data through two algorithms. The first generates topics of themes guardian’s mention in the group chat, such as alerts from Dot Dot Dot or events of interest.
+  The second algorithm spatializes the messages as points in an n-dimensional vector space.
+  Both the size and the darkness of the title dot represents how many conversation comments have the same topic vector.
+  I then mapped the topic and message data and word embeddings in 3D space, and graphing the content of each message in the resulting word cloud.
+</div><div grid-col="5" grid-pad="2"></div><div grid-col="1" grid-pad="2"></div></div><br>
+<div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive="">
 	<div grid-col="0" grid-pad="2"></div>
-	<div grid-col="8" grid-pad="2" class=""><img width="2000" height="1000" width_o="1000" height_o="1000" src="Model_results.png" data-mid="16754255" border="0" data-mid="16589121" border="0" data-scale="100" class="image-zoom" style="width: 140%; height: auto; margin-left: 0%; margin-top: -0.049999999999997%;"/></div>
+	<div grid-col="8" grid-pad="2" class=""><img width="2000" height="1000" width_o="1000" height_o="1000" src="Structure_algorithms.png" data-mid="16754255" border="0" data-mid="16589121" border="0" data-scale="100" class="image-zoom" style="width: 140%; height: auto; margin-left: 0%; margin-top: -0.049999999999997%;"/></div>
 	<div grid-col="2" grid-pad="2"></div>
 </div>
 <br>
-<br><div grid-col="5" grid-pad="2" class="">A <a href="https://christinalast.shinyapps.io/R-Accessibility-Vis/" target="_blank">web interface</a> shows the results of the analysis. <br>
-<br>The results were presented at the International Association of Travel Behaviour (IATBR) research conference.</div>
+  <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2>Process 2: Interactivity</h2>
+  <br>
+  In terms of interactivity each topic is given a separate colour which can be turned on and off. The conversations can be viewed in Title Mode, where the vectors can be turned on and off.
+  The word cloud can be used to see what conversations have topics that include the second word, the word topic information can be turned on and off.
+  When a point is hovered over the words/titles appear, the user can use the up and down arrow keys to cycle through the words/titles.
+  The right and left arrow keys can be used to select a specific word/title and see the connections related to it.
+</div><div grid-col="5" grid-pad="2"></div><div grid-col="1" grid-pad="2"></div></div><br>
+  <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2>Process 3: Algorithms</h2>
+<br>The visualisation incorporates two natural language processing (NLP) algorithms, illustrating how machine learning algorithms can extract insights from textual data.
+Furthermore, the visual touches on Information privacy as the relationship between the collection and dissemination of data, technology, the public expectation of privacy, legal and political issues surrounding them.
+When considering underlying anxieties with ‘flexible living’ associated with the precarious lives of informal guardian communities, the debate around privacy, information exposure of the various practices of property guardians highlights the multiple levels of insecurity communities such as this face.
+</div>
+<br>
+<br>
+<br><div grid-col="5" grid-pad="2" class="">The <a href="https://github.com/ChristinaLast/Booth-House-is-typing..." target="_blank">code</a> to run the visualisation locally is available on Github. <br>
+<br>The project was exhibited at the <a href="https://www.boothhaus.com/">Booth Haus art exhibition</a> in December 2019</div>
 <div grid-col="5" grid-pad="2"></div><div grid-col="1" grid-pad="2"></div></div><br>
 <hr><div style="text-align: left"><h2>Still curious? Check out some of my other work:<br></h2>
 				</div>
