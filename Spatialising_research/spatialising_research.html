@@ -411,18 +411,24 @@
 </h2><br>
 <br>
 <div style="text-align: center"><div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive="">
+  <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive="">
+  	<div grid-col="0" grid-pad="2"></div>
+  	<div grid-col="8" grid-pad="2" class=""><br>
+  	<div grid-col="2" grid-pad="2"></div>
+  </div>
+  <video width="1080" autoplay="" muted="" loop="" playsinline="" style="text-align: center;"><source src="Spatialising_ucsb_movie.mp4" type="video/mp4">
+  </video></div>
 	<div grid-col="1" grid-pad="2"></div>
 	<div grid-col="10" grid-pad="2" class="">
-    <img width="1000" height="1000" width_o="1000" height_o="1000" data-src="https://freight.cargo.site/t/original/i/2869aeccb7cfbf9b0a4b09aaf5caabbbad4ea71b406bf313c88357335c779ad2/idep_sq.png" data-mid="16589121" border="0" data-scale="100" class="image-zoom" src="//freight.cargo.site/w/1000/q/94/i/2869aeccb7cfbf9b0a4b09aaf5caabbbad4ea71b406bf313c88357335c779ad2/idep_sq.png"  style="width: 100%; height: auto; margin-left: 0%; margin-top: -0.049999999999997%;"></div>
-	<div grid-col="1" grid-pad="2"></div>
+    <div grid-col="1" grid-pad="2"></div>
 </div><br></div>
 <br>
 <div grid-row="" grid-pad="3" grid-gutter="6" grid-responsive="">
   <div grid-col="1" grid-pad="3"><br>
   </div>
-  <div grid-col="5" grid-pad="3"><i></i><i>As a researcher, how would you go about finding work similar to your own?
+  <div grid-col="5" grid-pad="3", style="text-align: left;"><i></i><i>As a researcher, how would you go about finding work similar to your own?
     Measures of similarity could include research done in similar regions of the world, research by similar departments and scholars, research with topical correspondence, or research that co-occurred at the same temporality, reflecting contextual change.
-  </div><div grid-col="5" grid-pad="3" class="">
+  </div><div grid-col="5" grid-pad="3" class="" style="text-align: left;">
     Determining these measures of similarity from a digital text collection requires mining document metadata. This project experiments with mapping from non-spatial tabular meta-data to spatialisations.</div><div grid-col="1" grid-pad="3"></div></div><br>
 <br>
 <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive="">
@@ -430,13 +436,13 @@
 	<div grid-col="8" grid-pad="2" class=""><br>
 	<div grid-col="2" grid-pad="2"></div>
 </div>
-<video width="1080" autoplay="" muted="" loop="" playsinline="" style="text-align: center;"><source src="Video_1.mp4" type="video/mp4">
-</video></div>
-<div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2>Process 1: Introduction</h2>
+
+<div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive="" style="text-align: left;"><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2>Process 1: Introduction</h2>
   <br>Spatial information provides guidance for the ways in which people, places and topics can be meaningfully displayed and analysed.
   Spatialization embeds documents into a metaphorical space where documents in closer proximity can be perceived as similar.
+</div><div grid-col="5" grid-pad="3" class="" style="text-align: left;"><br><br>
   Different conceptualizations of similarity, such as geographic and topical, lend themselves to analysis through different spatializations with varying measures of distance.
-  By spatializing information, researchers can compute on collections of research documents, asking questions like “Where in the world is the density of my domain’s research the highest?”, “Which domain is the most spatially diverse? or “What other research shares the same spatial neighborhood as my domain?”
+  By spatializing information, researchers can compute on collections of research documents, asking questions like “Where in the world is the density of my domain’s research the highest?”, “Which domain is the most spatially diverse? or “What other research shares the same spatial neighborhood as my domain?”</div><div grid-col="1" grid-pad="3"></div></div><br>
 
 </div><div grid-col="5" grid-pad="2"></div><div grid-col="1" grid-pad="2"></div></div><br>
 <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive="">
@@ -445,34 +451,38 @@
 	<div grid-col="2" grid-pad="2"></div>
 </div>
 <br>
-  <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2>Process 2: Idea</h2>
+  <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class="" style="text-align: left;"><h2>Process 2: Idea</h2>
   <br>
   To explore these questions, I wanted to display the geographic reach of departmental research published at UCSB, using a tool that the general public to interrogate Santa Barbara’s connection to other locations across the world.
   The "spatialisation" was inspired by the metaphor of global networks attributing cultures traditions and histories to different locales, and how researchers travel to investigate these cultural geographies and transfer those resources and knowledge to Santa Barbara.
   I aimed to represent these flows of information from locations to UCSB within my visualisation.
 </div><div grid-col="5" grid-pad="2"></div><div grid-col="1" grid-pad="2"></div></div><br>
-  <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2>Process 3: Data Cleaning</h2>
-<br> I scraped the ADRL UCSB Electronic Theses and Dissertations (N=1731) for the corresponding fields; Title, Year, Author, Degree Grantor, Supervisor, Description, Language.
+  <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class="" style="text-align: left;"><h2>Process 3: Data Cleaning</h2>
+<br> I scraped the <a href="https://www.alexandria.ucsb.edu/" target="_blank">ADRL UCSB Electronic Theses and Dissertations</a> (N=1731) for the corresponding fields; Title, Year, Author, Degree Grantor, Supervisor, Description, Language.
 To identify any locations specific to the thesis or dissertation I pushed the results through a geoparser which compared the word strings to individual place names in Gazeteers.
-The geoparsed results were read into R and geocoded using the following code which returns the latitude and longitude of the place name.
-To do this I selected gazeteers at multiple levels of geography and parsed the strings through each, to extract place names from multiple place scales.
+</div><div grid-col="5" grid-pad="3" class="" style="text-align: left;"><br><br>
+To geoparse the data I selected gazeteers at multiple levels of geography and parsed the strings through each, to extract place names from multiple place scales.
 The geoparsed results were read into R and geocoded using code which returns the latitude and longitude of the place name, with Bezier curves connecting locations mentioned within the same theses.
 Furthermore, interactivity was introduced into the "spatialisation", as hovering over a department in the legend, reveals the location links for that department.
-When the user has selected the department, the titles of the theses or dissertations associated with the geographic placements are shown.
-</div><div grid-col="5" grid-pad="2"></div><div grid-col="1" grid-pad="2"></div></div><br>
-  <div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class=""><h2>Process 3: Interactivity</h2>
+When the user has selected the department, the titles of the theses or dissertations associated with the geographic placements are shown.</div><div grid-col="1" grid-pad="3"></div></div>
+<br>
+<br>
+<br>
+
+<div grid-row="" grid-pad="2" grid-gutter="4" grid-responsive=""><div grid-col="1" grid-pad="2"></div><div grid-col="5" grid-pad="2" class="" style="text-align: left;"><h2>Process 4: Interactivity</h2>
 <br>This interactive 3D data “spatialisation” examined the relationship between different departments at UCSB and the geographic nature of their research.
 The result situates scientific research at UCSB in more powerful ways than library shelves, supporting multiple paradigms of data discovery.
 More broadly, this project allowed me to generate verbal, written, and visual communication methods, with a particular emphasis on framing relationships, visual storytelling, and information design.
 Such “spatialisations” convey how scientific research topics are related through similarity (by department type and proximity).
+<br>
+<br>The <a href="https://github.com/ChristinaLast/Spatialising_UCSB_Research" target="_blank">code</a> to run the visualisation locally is available on Github. <br>
+<br>The project was exhibited at the <a href="https://show.mat.ucsb.edu/2018">Media Arts and Technology End of Year Show (MAT EYoS)</a> in June 2018.</div>
+</div><br>
+</div>
 </div>
 <br>
 <br>
-<br><div grid-col="5" grid-pad="2" class="">The <a href="https://github.com/ChristinaLast/Booth-House-is-typing..." target="_blank">code</a> to run the visualisation locally is available on Github. <br>
-<br>The project was exhibited at the <a href="https://www.boothhaus.com/">Booth Haus art exhibition</a> in December 2019</div>
-<div grid-col="5" grid-pad="2"></div><div grid-col="1" grid-pad="2"></div></div><br>
-<hr><div style="text-align: left"><h2>Still curious? Check out some of my other work:<br></h2>
-				</div>
+<hr><div grid-col="8" grid-pad="8" ><h2>Still curious? Check out some of my other work:<br></h2>
         <h2><br><a id="Work"></a><a href="#Work" style="text-decoration:none" class="icon-link">︎</a></h2>
         </div>
         </projectcontent>
